@@ -1,10 +1,8 @@
-FROM alpine:3.14
+FROM alpine:3.15
 
 RUN apk add --update --no-cache openssh
 
 COPY tunnel.sh /tunnel.sh
-
-ENV PRIVATE_KEY_FILE="/run/secrets/private_key"
 
 ENTRYPOINT [ "/tunnel.sh" ]
 
