@@ -27,6 +27,8 @@ ssh \
     -oBatchMode=yes \
     -oStrictHostKeyChecking=no \
     -oServerAliveInterval=15 \
+    -oExitOnForwardFailure=yes \
+    -oTCPKeepAlive=on \
     -N \
     -L "0.0.0.0:${1?no local port}:${2?no target host}:${3?no target port}" \
     "${4?no ssh target}"
