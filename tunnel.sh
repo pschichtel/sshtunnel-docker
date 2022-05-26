@@ -29,8 +29,8 @@ ssh \
     -oServerAliveInterval=15 \
     -oExitOnForwardFailure=yes \
     -oTCPKeepAlive=yes \
-    -oTunnel=yes \
     -N \
     -L "0.0.0.0:${1?no local port}:${2?no target host}:${3?no target port}" \
+    ${SSH_EXTRA_OPTIONS:-} \
     "${4?no ssh target}"
 
